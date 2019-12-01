@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yxe.application.mapper.GrantMapper">
+  <resultMap id="BaseResultMap" type="com.yxe.application.po.Grant">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="parent_id" jdbcType="INTEGER" property="parentId" />
+    <result column="is_button" jdbcType="INTEGER" property="isButton" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+  </resultMap>
+  
+  <resultMap id="WithChildrenResultMap" type="com.yxe.application.po.Grant" extends="BaseResultMap">
+   	<result column="role_grant_id" jdbcType="INTEGER" property="roleGrantId" />
+    <collection property="children" columnPrefix="c_"  resultMap="BaseResultMap"/>
+  </resultMap>
+  
+  <resultMap id="WithCountOfChildrenResultMap" type="com.yxe.application.po.Grant" extends="BaseResultMap">
+     <result column="count_of_children" jdbcType="INTEGER" property="countOfChildren" />
+  </resultMap>
+  
+  
+  
+  
+  <sql id="Base_Column_List">
+    ${alias}.id, ${alias}.name, ${alias}.description, 
+    ${alias}.url, ${alias}.parent_id, ${alias}.is_button
+  </sql>
+  
+  <sql id="Base_Column_List2">
+    ${alias}.id as ${prefix}id, ${alias}.name as ${prefix}name,
+    ${alias}.description as ${prefix}description, ${alias}.url as ${prefix}url, 
+    ${alias}.parent_id as ${prefix}parent_id, ${alias}.is_button as ${prefix}is_button
+  </sql>
+  
+  <select id="getGrantListWithChildrenByRole" parameterType="com.yxe.application.po.Role" resultMap="WithChildrenResultMap">
+    select
+	    <include refid="Base_Column_List">
+	    	<property name="alias" value="t3"/>
+	    </include>,
+	    <include refid="Base_Column_List2">
+		    <property name="alias" value="t4" />
+		    <property name="prefix" value="c_" />
+	    </include>
+    from 
+    	role t1 inner join role_grant t2 on t1.id = t2.role_id 
+    	inner join `grant` t3 on t3.id = t2.grant_id
+    	inner join `grant` t4 ON t3.id = t4.parent_id
+    <where>
+        <if test = "roleId != null">
+            AND t1.id = ${roleId}
+        </if>
+
+       <if test = "parentId != null">
+            AND t3.parent_id = ${parentId}
+        </if>
+    </where>
+  </select>
+  
+  <select id="getListByRole" parameterType="com.yxe.application.po.Grant" resultMap="WithChildrenResultMap">
+    select
+	    <include refid="Base_Column_List">
+	    	<property name="alias" value="t2"/>
+	    </include>,
+	    t2.id as role_grant_id
+    from 
+    	role_grant t1 inner join `grant` t2 on t1.grant_id = t2.id
+    <where>
+        <if test = "roleId != null">
+            AND t1.role_id = ${roleId}
+        </if>
+
+       <if test = "parentId != null">
+            AND t2.parent_id = ${parentId}
+        </if>
+    </where>
+  </select>
+  
+  
+  <select id="getListByAgent" parameterType="java.util.Map" resultMap="WithChildrenResultMap">
+    select
+	    <include refid="Base_Column_List">
+	    	<property name="alias" value="t4"/>
+	    </include>
+    FROM
+		agent t1
+	INNER JOIN agent_role t2 ON t1.id = t2.agent_id
+	INNER JOIN role_grant t3 ON t2.role_id = t3.role_id
+	INNER JOIN `grant` t4 ON t3.grant_id = t4.id
+    <where>
+        <if test = "agentId != null">
+            AND t1.id = ${agentId}
+        </if>
+        <if test = "parentId != null">
+            AND t4.parent_id = ${parentId}
+        </if>
+    </where>
+    order by t4.parent_id, t4.sort asc
+  </select>
+  
+  
+  
+  <select id="getListWithChidren" parameterType="com.yxe.application.po.Grant" resultMap="WithChildrenResultMap">
+    select
+	    <include refid="Base_Column_List">
+	    	<property name="alias" value="t2"/>
+	    </include>,
+	    <include refid="Base_Column_List2">
+		    <property name="alias" value="t3" />
+		    <property name="prefix" value="c_" />
+	    </include>
+    FROM
+		(
+			SELECT
+		  		<include refid="Base_Column_List">
+			    	<property name="alias" value="t1"/>
+			    </include>
+			FROM
+				`grant` t1
+			where t1.parent_id = ${parentId}
+		) t2
+	LEFT JOIN `grant` t3 ON t2.id = t3.parent_id;
+  </select>
+  
+  <select id="getListWithCountOfChildren" parameterType="com.yxe.application.po.Grant" resultMap="WithCountOfChildrenResultMap">
+	SELECT
+		 <include refid="Base_Column_List">
+	    	<property name="alias" value="t2"/>
+	    </include>, COUNT(t3.id) count_of_children
+	FROM
+		(
+			SELECT
+				 <include refid="Base_Column_List">
+			    	<property name="alias" value="t1"/>
+			    </include>
+			FROM
+				`grant` t1
+			WHERE
+				parent_id = #{parentId}
+		) t2
+	LEFT JOIN `grant` t3 ON t2.id = t3.parent_id GROUP BY t2.id
+  </select>
+  
+  
+</mapper>

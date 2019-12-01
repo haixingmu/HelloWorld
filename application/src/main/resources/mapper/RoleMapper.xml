@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yxe.application.mapper.RoleMapper">
+  <resultMap id="BaseResultMap" type="com.yxe.application.po.Role">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  
+  <resultMap id="WithAgentResultMap" type="com.yxe.application.po.Role" extends="BaseResultMap">
+    <collection property="agentList" columnPrefix="a_"  resultMap="com.yxe.application.mapper.AgentMapper.BaseResultMap"/>
+  </resultMap>
+  
+  
+  <sql id="Base_Column_List">
+    ${alias}.id, ${alias}.name, ${alias}.description, 
+    ${alias}.create_time, ${alias}.update_time
+  </sql>
+  
+  <sql id="Base_Column_List2">
+    ${alias}.id as ${prefix}id, ${alias}.name as ${prefix}name,
+    ${alias}.description as ${prefix}description, ${alias}.create_time as ${prefix}create_time, 
+    ${alias}.update_time as ${prefix}update_time
+  </sql>
+  
+  <select id="getByPageWithAgentList" parameterType="java.util.Map" resultMap="WithAgentResultMap">
+     select 
+     	<include refid="Base_Column_List">
+	    	<property name="alias" value="t5"/>
+	    </include>,
+	    <include refid="com.yxe.application.mapper.AgentMapper.Base_Column_List2">
+		    <property name="alias" value="t7" />
+		    <property name="prefix" value="a_" />
+	    </include>
+     from 
+	    (select
+		    distinct t1.id
+	    from role t1 left join agent_role t2 on t1.id = t2.role_id 
+	    left join agent t3 on t3.id = t2.agent_id
+	    <where>
+	        <if test = "null != name">
+	            AND t1.name like  #{name}
+	        </if>
+	       <if test = "null != agentName">
+	            AND t3.username like #{agentName}
+	        </if>
+	    </where>
+	    LIMIT ${startRow}, ${pageSize})t4
+    inner join role t5 on t4.id = t5.id 
+    left join agent_role t6 on t5.id = t6.role_id 
+    left join agent t7 on t7.id = t6.agent_id
+  </select>
+  
+  <select id="getByPageWithAgentCount" parameterType="java.util.Map" resultType="java.lang.Integer">
+    select
+	    count(distinct t1.id) total_count
+    from role t1 left join agent_role t2 on t1.id = t2.role_id 
+    left join agent t3 on t3.id = t2.agent_id
+    <where>
+        <if test = "null != name">
+            AND t1.name like  #{name}
+        </if>
+       <if test = "null != agentName">
+            AND t3.username like #{agentName}
+        </if>
+    </where>
+  </select>
+  
+  
+  
+  
+  
+  
+  
+  
+</mapper>
