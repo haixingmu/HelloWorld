@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.MocClschkSettingMapper">
+  <resultMap id="BaseResultMap" type="com.yxe.application.po.MocClschkSetting">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="CLSCHK_ITEM" jdbcType="VARCHAR" property="clschkItem" />
+    <result column="CLSCHK_DESC" jdbcType="VARCHAR" property="clschkDesc" />
+    <result column="EFFECTIVE_STATUS" jdbcType="VARCHAR" property="effectiveStatus" />
+    <result column="OPRID" jdbcType="VARCHAR" property="oprid" />
+    <result column="OPR_DATE" jdbcType="TIMESTAMP" property="oprDate" />
+    <result column="UNITNO" jdbcType="VARCHAR" property="unitno" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    ID, CLSCHK_ITEM, CLSCHK_DESC, EFFECTIVE_STATUS, OPRID, OPR_DATE, UNITNO
+  </sql>
+</mapper>

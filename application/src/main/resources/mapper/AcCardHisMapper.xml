@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.AcCardHisMapper">
+  <resultMap id="BaseResultMap" type="com.yxe.application.po.AcCardHis">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="XH" jdbcType="VARCHAR" property="xh" />
+    <result column="UPXH" jdbcType="VARCHAR" property="upxh" />
+    <result column="UNITNO" jdbcType="VARCHAR" property="unitno" />
+    <result column="CARD_NO" jdbcType="VARCHAR" property="cardNo" />
+    <result column="WORKER_TYPE" jdbcType="VARCHAR" property="workerType" />
+    <result column="CLIENT_CODE" jdbcType="VARCHAR" property="clientCode" />
+    <result column="CLIENT_NAME" jdbcType="VARCHAR" property="clientName" />
+    <result column="USER_CODE" jdbcType="VARCHAR" property="userCode" />
+    <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+    <result column="SYN_CODE" jdbcType="VARCHAR" property="synCode" />
+    <result column="OPRID" jdbcType="VARCHAR" property="oprid" />
+    <result column="OPRDATE" jdbcType="TIMESTAMP" property="oprdate" />
+    <result column="YXBZ" jdbcType="CHAR" property="yxbz" />
+    <result column="STATUS" jdbcType="CHAR" property="status" />
+    <result column="USER_ID" jdbcType="VARCHAR" property="userId" />
+    <result column="ID_PIC" jdbcType="VARCHAR" property="idPic" />
+    <result column="USER_PIC" jdbcType="VARCHAR" property="userPic" />
+    <result column="USER_ADDRESS" jdbcType="VARCHAR" property="userAddress" />
+    <result column="USER_BIRTHDAY" jdbcType="VARCHAR" property="userBirthday" />
+    <result column="USER_SEX" jdbcType="VARCHAR" property="userSex" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="USER_FERET" jdbcType="VARCHAR" property="userFeret" />
+    <result column="SN" jdbcType="VARCHAR" property="sn" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    XH, UPXH, UNITNO, CARD_NO, WORKER_TYPE, CLIENT_CODE, CLIENT_NAME, USER_CODE, USER_NAME, 
+    SYN_CODE, OPRID, OPRDATE, YXBZ, STATUS, USER_ID, ID_PIC, USER_PIC, USER_ADDRESS, 
+    USER_BIRTHDAY, USER_SEX, REMARK, USER_FERET, SN
+  </sql>
+</mapper>

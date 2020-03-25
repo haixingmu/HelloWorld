@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.TpsWorkerCertMapper">
+  <resultMap id="BaseResultMap" type="com.yxe.application.po.TpsWorkerCert">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="XH" jdbcType="INTEGER" property="xh" />
+    <result column="UPXH" jdbcType="INTEGER" property="upxh" />
+    <result column="SERVICEXH" jdbcType="INTEGER" property="servicexh" />
+    <result column="WORKERXH" jdbcType="INTEGER" property="workerxh" />
+    <result column="CNTRCTXH" jdbcType="INTEGER" property="cntrctxh" />
+    <result column="CERT_TYPE" jdbcType="VARCHAR" property="certType" />
+    <result column="PAPERS_NO" jdbcType="VARCHAR" property="papersNo" />
+    <result column="PAPERS_BEGIN" jdbcType="TIMESTAMP" property="papersBegin" />
+    <result column="PAPERS_END" jdbcType="TIMESTAMP" property="papersEnd" />
+    <result column="FLAG" jdbcType="VARCHAR" property="flag" />
+    <result column="YXBZ" jdbcType="VARCHAR" property="yxbz" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="ATTACH" jdbcType="VARCHAR" property="attach" />
+    <result column="OPRID" jdbcType="VARCHAR" property="oprid" />
+    <result column="OPRDATE" jdbcType="TIMESTAMP" property="oprdate" />
+    <result column="CHECK_SPAN" jdbcType="INTEGER" property="checkSpan" />
+    <result column="PAPERS_START" jdbcType="TIMESTAMP" property="papersStart" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    XH, UPXH, SERVICEXH, WORKERXH, CNTRCTXH, CERT_TYPE, PAPERS_NO, PAPERS_BEGIN, PAPERS_END, 
+    FLAG, YXBZ, REMARK, ATTACH, OPRID, OPRDATE, CHECK_SPAN, PAPERS_START
+  </sql>
+</mapper>

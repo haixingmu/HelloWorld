@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.MocHazApproversMapper">
+  <resultMap id="BaseResultMap" type="com.yxe.application.po.MocHazApprovers">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="UNITNO" jdbcType="VARCHAR" property="unitno" />
+    <result column="DEPTNO" jdbcType="VARCHAR" property="deptno" />
+    <result column="EMPID" jdbcType="VARCHAR" property="empid" />
+    <result column="EMPNAME" jdbcType="VARCHAR" property="empname" />
+    <result column="EFFECTIVE_STATUS" jdbcType="VARCHAR" property="effectiveStatus" />
+    <result column="APP_SEQ" jdbcType="VARCHAR" property="appSeq" />
+    <result column="OPRID" jdbcType="VARCHAR" property="oprid" />
+    <result column="OPR_DATE" jdbcType="TIMESTAMP" property="oprDate" />
+    <result column="BASED_UNITNO" jdbcType="VARCHAR" property="basedUnitno" />
+    <result column="GRADE_ID" jdbcType="VARCHAR" property="gradeId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    ID, UNITNO, DEPTNO, EMPID, EMPNAME, EFFECTIVE_STATUS, APP_SEQ, OPRID, OPR_DATE, BASED_UNITNO, 
+    GRADE_ID
+  </sql>
+</mapper>

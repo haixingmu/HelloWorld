@@ -101,5 +101,32 @@ public abstract class BaseServiceImpl<T> implements BaseService<T> {
 		page.setSize(list.size());
 		return page;
 	}
+	
+	@Override
+	public PageInfo<T> selectByPage(PageInfo<T> page) {
+		if (null == page) {
+			page = new PageInfo<T>();
+		}
+		int total = mapper.selectCount(page.getParam());
+		page.setTotal(total);
+
+		List<T> list = new ArrayList<T>();
+		if (total > 0) {
+			if (total % page.getPageSize() > 0) {
+				page.setPages(total / page.getPageSize() + 1);
+			} else {
+				page.setPages(total / page.getPageSize());
+			}
+			page.setStartRow((page.getPageNum() - 1) * page.getPageSize());
+			list = mapper.selectByRowBounds(page.getParam(), new RowBounds(page.getStartRow(), page.getPageSize()));
+			page.setHasPreviousPage(page.getPageNum() > 1);
+			page.setHasNextPage(page.getPageNum() < page.getPages());
+		} else {
+			page.setPages(0);
+		}
+		page.setList(list);
+		page.setSize(list.size());
+		return page;
+	}
 
 }

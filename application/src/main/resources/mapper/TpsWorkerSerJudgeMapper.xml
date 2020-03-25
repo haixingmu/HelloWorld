@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.TpsWorkerSerJudgeMapper">
+  <resultMap id="BaseResultMap" type="com.yxe.application.po.TpsWorkerSerJudge">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="XH" jdbcType="INTEGER" property="xh" />
+    <result column="UPXH" jdbcType="INTEGER" property="upxh" />
+    <result column="ITEM_NO" jdbcType="VARCHAR" property="itemNo" />
+    <result column="DELAY" jdbcType="INTEGER" property="delay" />
+    <result column="BASEDATE" jdbcType="TIMESTAMP" property="basedate" />
+    <result column="BEGINDATE" jdbcType="TIMESTAMP" property="begindate" />
+    <result column="OPRID" jdbcType="VARCHAR" property="oprid" />
+    <result column="OPRDATE" jdbcType="TIMESTAMP" property="oprdate" />
+    <result column="YXBZ" jdbcType="VARCHAR" property="yxbz" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    XH, UPXH, ITEM_NO, DELAY, BASEDATE, BEGINDATE, OPRID, OPRDATE, YXBZ
+  </sql>
+</mapper>

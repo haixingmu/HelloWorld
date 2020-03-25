@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.MocSinfoupdateSettingMapper">
+  <resultMap id="BaseResultMap" type="com.yxe.application.po.MocSinfoupdateSetting">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="SINFO_ID" jdbcType="VARCHAR" property="sinfoId" />
+    <result column="SINFO_DESC" jdbcType="VARCHAR" property="sinfoDesc" />
+    <result column="EFFECTIVE_STATUS" jdbcType="VARCHAR" property="effectiveStatus" />
+    <result column="OPRID" jdbcType="VARCHAR" property="oprid" />
+    <result column="OPR_DATE" jdbcType="TIMESTAMP" property="oprDate" />
+    <result column="UNITNO" jdbcType="VARCHAR" property="unitno" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    ID, SINFO_ID, SINFO_DESC, EFFECTIVE_STATUS, OPRID, OPR_DATE, UNITNO
+  </sql>
+</mapper>

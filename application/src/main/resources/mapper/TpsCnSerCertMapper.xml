@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.TpsCnSerCertMapper">
+  <resultMap id="BaseResultMap" type="com.yxe.application.po.TpsCnSerCert">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="XH" jdbcType="DECIMAL" property="xh" />
+    <result column="UPXH" jdbcType="DECIMAL" property="upxh" />
+    <result column="CNTRCTXH" jdbcType="DECIMAL" property="cntrctxh" />
+    <result column="CERT_NO" jdbcType="VARCHAR" property="certNo" />
+    <result column="CERT_NAME" jdbcType="VARCHAR" property="certName" />
+    <result column="BEGINTIME" jdbcType="TIMESTAMP" property="begintime" />
+    <result column="ENDTIME" jdbcType="TIMESTAMP" property="endtime" />
+    <result column="OPRID" jdbcType="VARCHAR" property="oprid" />
+    <result column="OPRDATE" jdbcType="TIMESTAMP" property="oprdate" />
+    <result column="YXBZ" jdbcType="VARCHAR" property="yxbz" />
+    <result column="ATTACH" jdbcType="VARCHAR" property="attach" />
+    <result column="FLAG" jdbcType="CHAR" property="flag" />
+    <result column="D_CODE" jdbcType="VARCHAR" property="dCode" />
+  </resultMap>
+</mapper>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.TpsWorkerTrainMapper">
+  <resultMap id="BaseResultMap" type="com.yxe.application.po.TpsWorkerTrain">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="XH" jdbcType="DECIMAL" property="xh" />
+    <result column="UPXH" jdbcType="DECIMAL" property="upxh" />
+    <result column="SERVICEXH" jdbcType="DECIMAL" property="servicexh" />
+    <result column="WORKERXH" jdbcType="DECIMAL" property="workerxh" />
+    <result column="CNTRCTXH" jdbcType="DECIMAL" property="cntrctxh" />
+    <result column="UNITNO" jdbcType="VARCHAR" property="unitno" />
+    <result column="TRAIN_TYPE" jdbcType="VARCHAR" property="trainType" />
+    <result column="TRAIN_DATE" jdbcType="TIMESTAMP" property="trainDate" />
+    <result column="TRAIN_BEGIN" jdbcType="TIMESTAMP" property="trainBegin" />
+    <result column="TRAIN_END" jdbcType="TIMESTAMP" property="trainEnd" />
+    <result column="FLAG" jdbcType="VARCHAR" property="flag" />
+    <result column="YXBZ" jdbcType="VARCHAR" property="yxbz" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="ATTACH" jdbcType="VARCHAR" property="attach" />
+    <result column="OPRID" jdbcType="VARCHAR" property="oprid" />
+    <result column="OPRDATE" jdbcType="TIMESTAMP" property="oprdate" />
+  </resultMap>
+</mapper>

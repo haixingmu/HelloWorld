@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.AcChannelinChannelMapper">
+  <resultMap id="BaseResultMap" type="com.yxe.application.po.AcChannelinChannel">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="XH" jdbcType="VARCHAR" property="xh" />
+    <result column="UPXH" jdbcType="VARCHAR" property="upxh" />
+    <result column="CHANNEL_NO" jdbcType="VARCHAR" property="channelNo" />
+    <result column="REQ_BEGIN" jdbcType="TIMESTAMP" property="reqBegin" />
+    <result column="REQ_END" jdbcType="TIMESTAMP" property="reqEnd" />
+    <result column="CHECK_CYCLE" jdbcType="DECIMAL" property="checkCycle" />
+    <result column="DEF_DAY" jdbcType="DECIMAL" property="defDay" />
+    <result column="MAX_DAY" jdbcType="DECIMAL" property="maxDay" />
+    <result column="LOCKFLAG" jdbcType="CHAR" property="lockflag" />
+    <result column="OPRID" jdbcType="VARCHAR" property="oprid" />
+    <result column="OPRDATE" jdbcType="TIMESTAMP" property="oprdate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    XH, UPXH, CHANNEL_NO, REQ_BEGIN, REQ_END, CHECK_CYCLE, DEF_DAY, MAX_DAY, LOCKFLAG, 
+    OPRID, OPRDATE
+  </sql>
+</mapper>

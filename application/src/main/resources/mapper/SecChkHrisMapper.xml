@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.SecChkHrisMapper">
+  <resultMap id="BaseResultMap" type="com.yxe.application.po.SecChkHris">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="CL_HRIS_SEQ" jdbcType="DECIMAL" property="clHrisSeq" />
+    <result column="CL_SEQ" jdbcType="VARCHAR" property="clSeq" />
+    <result column="CL_NO" jdbcType="VARCHAR" property="clNo" />
+    <result column="BU_TO" jdbcType="VARCHAR" property="buTo" />
+    <result column="CHECK_DATE" jdbcType="TIMESTAMP" property="checkDate" />
+    <result column="SCOPE_DEPT_NO" jdbcType="VARCHAR" property="scopeDeptNo" />
+    <result column="SHORT_TYPE" jdbcType="VARCHAR" property="shortType" />
+    <result column="SERIOUS_TYPE" jdbcType="VARCHAR" property="seriousType" />
+    <result column="DUTY_DEPT_NO" jdbcType="VARCHAR" property="dutyDeptNo" />
+    <result column="DUTY_DEPT_SUP" jdbcType="VARCHAR" property="dutyDeptSup" />
+    <result column="DUTY_DEPT_PERSON" jdbcType="VARCHAR" property="dutyDeptPerson" />
+    <result column="REVISE_DATE" jdbcType="TIMESTAMP" property="reviseDate" />
+    <result column="SHORT_DESCR" jdbcType="VARCHAR" property="shortDescr" />
+    <result column="MEMO" jdbcType="VARCHAR" property="memo" />
+    <result column="CREATE_DATE" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="OPRID" jdbcType="VARCHAR" property="oprid" />
+    <result column="UPDATE_DATE" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="IMPROVE_DESCR" jdbcType="VARCHAR" property="improveDescr" />
+    <result column="FINISHED_DATE" jdbcType="TIMESTAMP" property="finishedDate" />
+    <result column="DUTY_PERSON" jdbcType="VARCHAR" property="dutyPerson" />
+    <result column="DUTY_PERSON_SUP" jdbcType="VARCHAR" property="dutyPersonSup" />
+    <result column="CONFIRM_RESULT" jdbcType="VARCHAR" property="confirmResult" />
+    <result column="CONFIRM_DATE" jdbcType="TIMESTAMP" property="confirmDate" />
+    <result column="CONFIRM_PERSON" jdbcType="VARCHAR" property="confirmPerson" />
+    <result column="CONFIRM_SUB" jdbcType="VARCHAR" property="confirmSub" />
+    <result column="SEC_STATUS" jdbcType="VARCHAR" property="secStatus" />
+    <result column="SET_TYPE" jdbcType="VARCHAR" property="setType" />
+    <result column="IS_SEND_MAIL" jdbcType="VARCHAR" property="isSendMail" />
+    <result column="ASSIGNED_MAN" jdbcType="VARCHAR" property="assignedMan" />
+    <result column="SEC_CLASSIFY" jdbcType="VARCHAR" property="secClassify" />
+    <result column="SQUAD_SEQ" jdbcType="DECIMAL" property="squadSeq" />
+    <result column="MEMO_DESCR" jdbcType="VARCHAR" property="memoDescr" />
+    <result column="SYS_MEMO" jdbcType="VARCHAR" property="sysMemo" />
+    <result column="UNION_EMP" jdbcType="VARCHAR" property="unionEmp" />
+    <result column="FIN_REVISE_DATE" jdbcType="TIMESTAMP" property="finReviseDate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    ID, CL_HRIS_SEQ, CL_SEQ, CL_NO, BU_TO, CHECK_DATE, SCOPE_DEPT_NO, SHORT_TYPE, SERIOUS_TYPE, 
+    DUTY_DEPT_NO, DUTY_DEPT_SUP, DUTY_DEPT_PERSON, REVISE_DATE, SHORT_DESCR, MEMO, CREATE_DATE, 
+    OPRID, UPDATE_DATE, IMPROVE_DESCR, FINISHED_DATE, DUTY_PERSON, DUTY_PERSON_SUP, CONFIRM_RESULT, 
+    CONFIRM_DATE, CONFIRM_PERSON, CONFIRM_SUB, SEC_STATUS, SET_TYPE, IS_SEND_MAIL, ASSIGNED_MAN, 
+    SEC_CLASSIFY, SQUAD_SEQ, MEMO_DESCR, SYS_MEMO, UNION_EMP, FIN_REVISE_DATE
+  </sql>
+</mapper>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.TpsWorkerMapper">
+  <resultMap id="BaseResultMap" type="com.yxe.application.po.TpsWorker">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="XH" jdbcType="DECIMAL" property="xh" />
+    <result column="CNTRCTXH" jdbcType="DECIMAL" property="cntrctxh" />
+    <result column="WORKERNO" jdbcType="VARCHAR" property="workerno" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="SEX" jdbcType="VARCHAR" property="sex" />
+    <result column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="BIRTHDAY" jdbcType="TIMESTAMP" property="birthday" />
+    <result column="ADDRESS" jdbcType="VARCHAR" property="address" />
+    <result column="TEL" jdbcType="VARCHAR" property="tel" />
+    <result column="WORKTYPE" jdbcType="VARCHAR" property="worktype" />
+    <result column="PIC" jdbcType="VARCHAR" property="pic" />
+    <result column="SCORE_ALL" jdbcType="DECIMAL" property="scoreAll" />
+    <result column="YXBZ" jdbcType="VARCHAR" property="yxbz" />
+    <result column="OPRID" jdbcType="VARCHAR" property="oprid" />
+    <result column="OPRDATE" jdbcType="TIMESTAMP" property="oprdate" />
+    <result column="PIC1" jdbcType="VARCHAR" property="pic1" />
+    <result column="USER_FERET" jdbcType="VARCHAR" property="userFeret" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    XH, CNTRCTXH, WORKERNO, USERNAME, SEX, ID, BIRTHDAY, ADDRESS, TEL, WORKTYPE, PIC, 
+    SCORE_ALL, YXBZ, OPRID, OPRDATE, PIC1, USER_FERET
+  </sql>
+</mapper>

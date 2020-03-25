@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.TpsWorkerSerEntityMapper">
+  <resultMap id="BaseResultMap" type="com.yxe.application.po.TpsWorkerSerEntity">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="XH" jdbcType="VARCHAR" property="xh" />
+    <result column="SERVICEXH" jdbcType="DECIMAL" property="servicexh" />
+    <result column="CNTRCTXH" jdbcType="DECIMAL" property="cntrctxh" />
+    <result column="UNITNO" jdbcType="VARCHAR" property="unitno" />
+    <result column="WORKERXH" jdbcType="DECIMAL" property="workerxh" />
+    <result column="PERSONTYPE" jdbcType="DECIMAL" property="persontype" />
+    <result column="FLAG" jdbcType="VARCHAR" property="flag" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="BLACKFLAG" jdbcType="VARCHAR" property="blackflag" />
+    <result column="OPRID" jdbcType="VARCHAR" property="oprid" />
+    <result column="OPRDATE" jdbcType="TIMESTAMP" property="oprdate" />
+    <result column="YXBZ" jdbcType="VARCHAR" property="yxbz" />
+    <result column="SPECIAL_FLAG" jdbcType="VARCHAR" property="specialFlag" />
+    <result column="ATTACH" jdbcType="VARCHAR" property="attach" />
+    <result column="WORK_AREA" jdbcType="VARCHAR" property="workArea" />
+    <result column="TEMP_XH" jdbcType="VARCHAR" property="tempXh" />
+  </resultMap>
+</mapper>

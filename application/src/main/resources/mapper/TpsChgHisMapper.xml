@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.TpsChgHisMapper">
+  <resultMap id="BaseResultMap" type="com.yxe.application.po.TpsChgHis">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="XH" jdbcType="DECIMAL" property="xh" />
+    <result column="UPXH" jdbcType="DECIMAL" property="upxh" />
+    <result column="LX" jdbcType="VARCHAR" property="lx" />
+    <result column="EDITFLAG" jdbcType="VARCHAR" property="editflag" />
+    <result column="DETAILXH" jdbcType="DECIMAL" property="detailxh" />
+    <result column="OPRID" jdbcType="VARCHAR" property="oprid" />
+    <result column="OPRTIME" jdbcType="TIMESTAMP" property="oprtime" />
+    <result column="LY" jdbcType="VARCHAR" property="ly" />
+    <result column="BEGINTIME" jdbcType="TIMESTAMP" property="begintime" />
+    <result column="ENDTIME" jdbcType="TIMESTAMP" property="endtime" />
+    <result column="HYXBZ" jdbcType="VARCHAR" property="hyxbz" />
+    <result column="HFLAG" jdbcType="CHAR" property="hflag" />
+  </resultMap>
+</mapper>

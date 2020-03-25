@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.MocWorkstepMapper">
+  <resultMap id="BaseResultMap" type="com.yxe.application.po.MocWorkstep">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="UNITNO" jdbcType="VARCHAR" property="unitno" />
+    <result column="STEPID" jdbcType="VARCHAR" property="stepid" />
+    <result column="STEPNAME" jdbcType="VARCHAR" property="stepname" />
+    <result column="EFFECTIVE_STATUS" jdbcType="CHAR" property="effectiveStatus" />
+    <result column="OPRID" jdbcType="VARCHAR" property="oprid" />
+    <result column="OPRTIME" jdbcType="TIMESTAMP" property="oprtime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    ID, UNITNO, STEPID, STEPNAME, EFFECTIVE_STATUS, OPRID, OPRTIME
+  </sql>
+</mapper>

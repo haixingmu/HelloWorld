@@ -55,7 +55,10 @@ public class PageInfo<T> implements Serializable {
     
     //结果集
     private List<T> list;
-
+    
+    //用来接收分页中额外的业务参数
+    private T param;
+    
     public PageInfo() {
     	this(1, 10);	// 默认初始化，为第一页，每页10条
     }
@@ -152,6 +155,11 @@ public class PageInfo<T> implements Serializable {
         this.list = list;
     }
 
-	
-	
+	public T getParam() {
+		return param;
+	}
+
+	public void setParam(T param) {
+		this.param = param;
+	}
 }

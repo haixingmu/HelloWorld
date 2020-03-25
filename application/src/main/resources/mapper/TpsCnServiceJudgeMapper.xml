@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.TpsCnServiceJudgeMapper">
+  <resultMap id="BaseResultMap" type="com.yxe.application.po.TpsCnServiceJudge">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="XH" jdbcType="DECIMAL" property="xh" />
+    <result column="UPXH" jdbcType="DECIMAL" property="upxh" />
+    <result column="ITEM_NO" jdbcType="VARCHAR" property="itemNo" />
+    <result column="DELAY" jdbcType="DECIMAL" property="delay" />
+    <result column="BASEDATE" jdbcType="TIMESTAMP" property="basedate" />
+    <result column="BEGINDATE" jdbcType="TIMESTAMP" property="begindate" />
+    <result column="OPRID" jdbcType="VARCHAR" property="oprid" />
+    <result column="OPRDATE" jdbcType="TIMESTAMP" property="oprdate" />
+    <result column="YXBZ" jdbcType="VARCHAR" property="yxbz" />
+  </resultMap>
+</mapper>

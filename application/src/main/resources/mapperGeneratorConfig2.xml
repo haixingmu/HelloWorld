@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+ 
+	<classPathEntry
+		location="E:\ProgramFiles\PLSQL Developer\instantclient_11_2\ojdbc6.jar" />
+	<context id="context1"> 
+		 <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+	      <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+	      <!-- caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true -->
+	     <!--  <property name="caseSensitive" value="true"/> -->
+	    </plugin>
+	    
+		<!-- <property name="javaFileEncoding" value="UTF-8" />
+		<commentGenerator type="com.**nks.e**s.CustomCommentGenerator" >
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator> -->
+ 
+		<jdbcConnection connectionURL="jdbc:oracle:thin:@//192.168.10.109:1521/ntsd"
+			driverClass="oracle.jdbc.driver.OracleDriver" password="ntsd1203"
+			userId="ntsd">
+			<!-- 针对oracle数据库 -->
+			<property name="remarksReporting" value="true"></property>
+		</jdbcConnection>
+ 
+ 
+		 <!--  指定JavaBean生成的位置 -->
+	    <javaModelGenerator targetPackage="com.yxe.application.po" targetProject=".\src\main\java"/>
+	    
+	      <!-- 指定sql映射文件生成的位置 -->
+	    <sqlMapGenerator targetPackage="mapper"  targetProject=".\src\main\resources"/>
+	    
+	     <!-- 指定dao接口，mapper接口生成的位置  这儿因为是通用的mapper所以不需要这一部分-->
+	    <!-- <javaClientGenerator targetPackage="com.yxe.application.mapper" targetProject="G:\MyProject\src\main\java" 
+	    type="XMLMAPPER" /> -->
+ 
+ 
+		<table tableName="t_cafos_tps_worker_project" domainObjectName="TpsWorkerProj"
+		 enableCountByExample="false" enableUpdateByExample="false"
+        enableDeleteByExample="false" enableSelectByExample="false"
+        selectByExampleQueryId="false"></table>
+	</context>
+</generatorConfiguration>

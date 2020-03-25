@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.TpsWorkerProjMapper">
+  <resultMap id="BaseResultMap" type="com.yxe.application.po.TpsWorkerProj">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="XH" jdbcType="DECIMAL" property="xh" />
+    <result column="UPXH" jdbcType="DECIMAL" property="upxh" />
+    <result column="SERVICEXH" jdbcType="DECIMAL" property="servicexh" />
+    <result column="WORKERXH" jdbcType="DECIMAL" property="workerxh" />
+    <result column="CNTRCTXH" jdbcType="DECIMAL" property="cntrctxh" />
+    <result column="PROJECT_NAME" jdbcType="VARCHAR" property="projectName" />
+    <result column="WORK_AREA" jdbcType="VARCHAR" property="workArea" />
+    <result column="PROJECT_BEGIN" jdbcType="TIMESTAMP" property="projectBegin" />
+    <result column="PROJECT_END" jdbcType="TIMESTAMP" property="projectEnd" />
+    <result column="WORK" jdbcType="VARCHAR" property="work" />
+    <result column="YXBZ" jdbcType="VARCHAR" property="yxbz" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="ATTACH" jdbcType="VARCHAR" property="attach" />
+    <result column="OPRID" jdbcType="VARCHAR" property="oprid" />
+    <result column="OPRDATE" jdbcType="TIMESTAMP" property="oprdate" />
+    <result column="EB_XH" jdbcType="VARCHAR" property="ebXh" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    XH, UPXH, SERVICEXH, WORKERXH, CNTRCTXH, PROJECT_NAME, WORK_AREA, PROJECT_BEGIN, 
+    PROJECT_END, WORK, YXBZ, REMARK, ATTACH, OPRID, OPRDATE, EB_XH
+  </sql>
+</mapper>

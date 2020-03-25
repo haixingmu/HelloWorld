@@ -12,4 +12,6 @@ public interface BaseService<T> {
 	
 	public PageInfo<T> selectByJoinPage(Map<String, Object> param,PageInfo<T> page);
 	
+	public PageInfo<T> selectByPage(PageInfo<T> page);
+	
 }

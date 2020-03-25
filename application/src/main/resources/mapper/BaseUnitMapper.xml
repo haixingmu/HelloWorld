@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.BaseUnitMapper">
+  <resultMap id="BaseResultMap" type="com.yxe.application.po.BaseUnit">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="U_CODE" jdbcType="VARCHAR" property="uCode" />
+    <result column="U_NAME" jdbcType="VARCHAR" property="uName" />
+    <result column="U_BZ" jdbcType="VARCHAR" property="uBz" />
+    <result column="UP_U_CODE" jdbcType="VARCHAR" property="upUCode" />
+    <result column="U_ADDRESS" jdbcType="VARCHAR" property="uAddress" />
+    <result column="U_TEL" jdbcType="VARCHAR" property="uTel" />
+    <result column="U_FAX" jdbcType="VARCHAR" property="uFax" />
+    <result column="U_LEADER" jdbcType="VARCHAR" property="uLeader" />
+    <result column="U_EMAIL" jdbcType="VARCHAR" property="uEmail" />
+    <result column="U_BUILDDATE" jdbcType="TIMESTAMP" property="uBuilddate" />
+    <result column="U_ORDER" jdbcType="DECIMAL" property="uOrder" />
+    <result column="JC" jdbcType="VARCHAR" property="jc" />
+    <result column="JM" jdbcType="VARCHAR" property="jm" />
+    <result column="AREANO" jdbcType="VARCHAR" property="areano" />
+    <result column="BUKRS" jdbcType="VARCHAR" property="bukrs" />
+    <result column="U_NAME_ZH_CN" jdbcType="VARCHAR" property="uNameZhCn" />
+    <result column="U_NAME_ZH_TW" jdbcType="VARCHAR" property="uNameZhTw" />
+    <result column="U_NAME_EN_US" jdbcType="VARCHAR" property="uNameEnUs" />
+    <result column="JC_ZH_CN" jdbcType="VARCHAR" property="jcZhCn" />
+    <result column="JC_ZH_TW" jdbcType="VARCHAR" property="jcZhTw" />
+    <result column="JC_EN_US" jdbcType="VARCHAR" property="jcEnUs" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    U_CODE, U_NAME, U_BZ, UP_U_CODE, U_ADDRESS, U_TEL, U_FAX, U_LEADER, U_EMAIL, U_BUILDDATE, 
+    U_ORDER, JC, JM, AREANO, BUKRS, U_NAME_ZH_CN, U_NAME_ZH_TW, U_NAME_EN_US, JC_ZH_CN, 
+    JC_ZH_TW, JC_EN_US
+  </sql>
+</mapper>
