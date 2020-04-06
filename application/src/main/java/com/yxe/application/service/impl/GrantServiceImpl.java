@@ -2,7 +2,6 @@ package com.yxe.application.service.impl;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -20,6 +19,7 @@ import com.yxe.application.po.RoleGrant;
 import com.yxe.application.service.GrantService;
 
 import tk.mybatis.mapper.entity.Example;
+import tk.mybatis.mapper.util.StringUtil;
 @Service
 public class GrantServiceImpl extends BaseServiceImpl<Grant> implements GrantService {
 	@Autowired
@@ -36,7 +36,7 @@ public class GrantServiceImpl extends BaseServiceImpl<Grant> implements GrantSer
 			criteria.andEqualTo("parentId", param.getParentId());
 		}
 		
-		if (null != param.getName() && !"".equals(param.getName())) {
+		if (!StringUtil.isEmpty(param.getName())) {
 			criteria.andLike("name", param.getName());
 		}
 		example.orderBy("parentId").asc();

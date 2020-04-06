@@ -13,7 +13,7 @@ public class JedisPoolDemo {
         // 设置最大连接数
         jedisPoolConfig.setMaxTotal(50);
         // 构建连接池
-        JedisPool jedisPool = new JedisPool(jedisPoolConfig, "127.0.0.1", 6379);
+        JedisPool jedisPool = new JedisPool(jedisPoolConfig, "192.168.233.128", 6379);
         // 从连接池中获取连接
         Jedis jedis = jedisPool.getResource();
         // 读取数据

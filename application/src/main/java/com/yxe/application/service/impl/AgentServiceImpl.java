@@ -13,6 +13,7 @@ import com.yxe.application.service.AgentService;
 import com.yxe.application.util.PageInfo;
 
 import tk.mybatis.mapper.entity.Example;
+import tk.mybatis.mapper.util.StringUtil;
 
 @Service
 public class AgentServiceImpl extends BaseServiceImpl<Agent> implements AgentService {
@@ -78,8 +79,9 @@ public class AgentServiceImpl extends BaseServiceImpl<Agent> implements AgentSer
 		Example example = new Example(Agent.class, false);
 		
 		Example.Criteria criteria = example.createCriteria();
-		
-		criteria.andLike("username", param.getUsername());
+		if (!StringUtil.isEmpty(param.getUsername())) {
+			criteria.andLike("username", param.getUsername());
+		}
 		return selectByPage(example, page);
 	}
 }

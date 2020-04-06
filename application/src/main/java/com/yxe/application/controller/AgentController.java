@@ -89,9 +89,6 @@ public class AgentController{
 			@RequestParam(value="page", defaultValue="1")Integer pageNum, 
 			@RequestParam(value="rows", defaultValue="30")Integer pageSize, 
 			@RequestBody Agent param) throws Exception {
-		if (null != param.getUsername() && param.getUsername().replaceAll("\\s*", "").length() < 1) {
-			param.setUsername(null);
-		}
 		return service.getByPage(pageNum, pageSize, param);
 	}
 }

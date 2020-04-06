@@ -21,7 +21,7 @@ public class ShardedJedisPoolDemo {
         // 定义集群信息
         List<JedisShardInfo> shards = new ArrayList<JedisShardInfo>();
 
-        shards.add(new JedisShardInfo("127.0.0.1", 6379));
+        shards.add(new JedisShardInfo("192.168.233.128", 6379));
         shards.add(new JedisShardInfo("192.168.189.131", 6379));
 
         // 定义集群连接池
