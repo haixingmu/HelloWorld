@@ -12,21 +12,21 @@ import com.yxe.application.service.RedisService;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 class ApplicationTests {
-	private final Logger logger = LoggerFactory.getLogger(ApplicationTests.class);
-	
-	@Autowired
-	RedisService redisService;
-	
-	@Test
-	void contextLoads() {
-		redisService.setStr("myname", "xxxxxxxx");
-		System.out.println("myname=============" + redisService.getKey("myname"));
-	}
-	@Test
-	void testLogger() {
-		logger.debug("debug");
-		logger.info("info");
-		logger.error("error");
-	}
+//	private final Logger logger = LoggerFactory.getLogger(ApplicationTests.class);
+//	
+//	@Autowired
+//	RedisService redisService;
+//	
+//	@Test
+//	void contextLoads() {
+//		redisService.setStr("myname", "xxxxxxxx");
+//		System.out.println("myname=============" + redisService.getKey("myname"));
+//	}
+//	@Test
+//	void testLogger() {
+//		logger.debug("debug");
+//		logger.info("info");
+//		logger.error("error");
+//	}
 
 }
