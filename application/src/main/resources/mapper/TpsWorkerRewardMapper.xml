@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.TpsWorkerRewardMapper">
+  <resultMap id="BaseResultMap" type="com.yxe.application.po.TpsWorkerReward">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="XH" jdbcType="DECIMAL" property="xh" />
+    <result column="UPXH" jdbcType="DECIMAL" property="upxh" />
+    <result column="SERVICEXH" jdbcType="DECIMAL" property="servicexh" />
+    <result column="WORKERXH" jdbcType="DECIMAL" property="workerxh" />
+    <result column="CNTRCTXH" jdbcType="DECIMAL" property="cntrctxh" />
+    <result column="UNITNO" jdbcType="VARCHAR" property="unitno" />
+    <result column="DESCR" jdbcType="VARCHAR" property="descr" />
+    <result column="HAPPEN_DATE" jdbcType="TIMESTAMP" property="happenDate" />
+    <result column="ADDRESS" jdbcType="VARCHAR" property="address" />
+    <result column="TYPE" jdbcType="VARCHAR" property="type" />
+    <result column="SCORE" jdbcType="DECIMAL" property="score" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="ATTACH" jdbcType="VARCHAR" property="attach" />
+    <result column="OPRID" jdbcType="VARCHAR" property="oprid" />
+    <result column="OPRDATE" jdbcType="TIMESTAMP" property="oprdate" />
+    <result column="YXBZ" jdbcType="VARCHAR" property="yxbz" />
+    <result column="SAFEFLAG" jdbcType="VARCHAR" property="safeflag" />
+    <result column="EB_XH" jdbcType="VARCHAR" property="ebXh" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    XH, UPXH, SERVICEXH, WORKERXH, CNTRCTXH, UNITNO, DESCR, HAPPEN_DATE, ADDRESS, TYPE, 
+    SCORE, REMARK, ATTACH, OPRID, OPRDATE, YXBZ, SAFEFLAG, EB_XH
+  </sql>
+</mapper>

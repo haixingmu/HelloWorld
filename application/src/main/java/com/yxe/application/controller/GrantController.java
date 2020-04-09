@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.alibaba.fastjson.JSONObject;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.yxe.application.exception.BusinessException;
 import com.yxe.application.po.Grant;
 import com.yxe.application.service.GrantService;
@@ -26,6 +29,10 @@ public class GrantController {
 	@RequestMapping(value = "/getList", method=RequestMethod.POST, produces="application/json; charset=utf-8")
 	public List<Grant> getList(HttpServletRequest request, HttpServletResponse response,
 			@RequestBody Grant param) throws Exception {
+		PageHelper.startPage(1, 15);
+		List<Grant> list = service.getList(param);
+		PageInfo<Grant> pageInfo = new PageInfo<Grant>(list);
+		System.out.println(JSONObject.toJSONString(pageInfo));
 		return service.getList(param);
 	}
 	
