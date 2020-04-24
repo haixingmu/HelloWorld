@@ -1,20 +1,26 @@
 package com.yxe.application.exception;
 
-import java.util.HashMap;
-import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.server.ServerHttpRequest;
 import org.springframework.http.server.ServerHttpResponse;
 import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
-import com.alibaba.fastjson.JSONObject;
+import com.yxe.application.util.ApiResponse;
 
-@ControllerAdvice
+@ControllerAdvice(annotations = {RestController.class})
 public class ApiResultHandler implements ResponseBodyAdvice<Object> {
+	
+	private Logger log = LoggerFactory.getLogger(ApiResultHandler.class);
 
 	@Override
 	public boolean supports(MethodParameter returnType, Class<? extends HttpMessageConverter<?>> converterType) {
@@ -25,20 +31,30 @@ public class ApiResultHandler implements ResponseBodyAdvice<Object> {
 	public Object beforeBodyWrite(Object body, MethodParameter returnType, MediaType selectedContentType,
 			Class<? extends HttpMessageConverter<?>> selectedConverterType, ServerHttpRequest request,
 			ServerHttpResponse response) {
-		if (request.getURI().getPath().indexOf("swagger") >= 0 || request.getURI().getPath().indexOf("api-docs") >= 0
-			 || request.getURI().getPath().indexOf("index.html") >= 0 || request.getURI().getPath().indexOf("csrf") >= 0) {
+		if (body instanceof ApiResponse) {
 			return body;
 		} else {
-			if (body instanceof Map) {
-				return body;
-			} else {
-				Map<String, Object> result = new HashMap<String, Object>();
-				result.put("code", 1); // 访问成功
-				result.put("msg", "success");
-				result.put("data", body);
-				return JSONObject.toJSON(result);
-			}
+			return new ApiResponse<Object>(1, "success", body);
 		}
 	}
-
+	
+	/**
+	 * 系统异常处理
+	 * 
+	 * @param req
+	 * @param resp
+	 * @param e
+	 * @return
+	 * @throws Exception
+	 */
+	@ResponseBody
+	@ExceptionHandler(value = Exception.class)
+	public ApiResponse<Object> defaultErrorHandler(HttpServletRequest req, Exception e) throws Exception {
+		log.error("", e);
+		ApiResponse<Object> result = new ApiResponse<Object>(10000, e.getMessage(), null);
+		if (e instanceof BusinessException) {
+			result.setCode(20000);
+		}
+		return result;
+	}
 }

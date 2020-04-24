@@ -36,7 +36,7 @@
 	    type="XMLMAPPER" /> -->
  
  
-		<table tableName="t_cafos_tps_worker_project" domainObjectName="TpsWorkerProj"
+		<table tableName="t_cafos_visitor" domainObjectName="Visitor"
 		 enableCountByExample="false" enableUpdateByExample="false"
         enableDeleteByExample="false" enableSelectByExample="false"
         selectByExampleQueryId="false"></table>

@@ -27,6 +27,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class MvcConfigure implements WebMvcConfigurer {
 
 	static final String ORIGINS[] = new String[] { "GET", "POST", "PUT", "DELETE" };
+	
+	
+	
 	/**
 	 * 跨域配置
 	 */
@@ -53,6 +56,7 @@ public class MvcConfigure implements WebMvcConfigurer {
                 .version("1.0")
                 .build();
     }
+    
     
     /**
      * swagger配置
