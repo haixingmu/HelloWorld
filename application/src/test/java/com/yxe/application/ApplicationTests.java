@@ -12,6 +12,7 @@ import com.yxe.application.service.RedisService;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 class ApplicationTests {
+	private String aString;
 //	private final Logger logger = LoggerFactory.getLogger(ApplicationTests.class);
 //	
 //	@Autowired
